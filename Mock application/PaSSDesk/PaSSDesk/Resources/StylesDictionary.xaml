@@ -1,0 +1,34 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush Color="#4CA6A498"
+                     x:Key="BackgroundBrush" />
+    <SolidColorBrush Color="#B2337AA6"
+                     x:Key="BorderBrush" />
+    
+    <LinearGradientBrush x:Key="ButtonBrush"
+                         EndPoint="0,1">
+        <GradientStop Color="#7F27668C"
+                      Offset="0.0" />
+        <GradientStop Color="White"
+                      Offset="1.0" />
+    </LinearGradientBrush>
+    
+    <Style TargetType="Label">
+        <Setter Property="FontFamily"
+                Value="Raavi" />
+        <Setter Property="FontSize"
+                Value="16" />
+    </Style>
+    <Style TargetType="Button">
+        <Setter Property="FontFamily"
+                Value="Raavi" />
+    </Style>
+
+    <Style TargetType="Button"
+           x:Key="ButtonMain">
+        <Setter Property="Background"
+                Value="{StaticResource ButtonBrush}" />
+        <Setter Property="FontSize"
+                Value="16" />
+    </Style>
+</ResourceDictionary>
