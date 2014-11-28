@@ -1,0 +1,14 @@
+C:\Users\SharePoint\Documents\GitHub\Swipe-Box\SwipeBox\SwipeBox.App\bin\Debug\SwipeBox.App.exe.config
+C:\Users\SharePoint\Documents\GitHub\Swipe-Box\SwipeBox\SwipeBox.App\bin\Debug\SwipeBox.App.exe
+C:\Users\SharePoint\Documents\GitHub\Swipe-Box\SwipeBox\SwipeBox.App\bin\Debug\SwipeBox.App.pdb
+C:\Users\SharePoint\Documents\GitHub\Swipe-Box\SwipeBox\SwipeBox.App\bin\Debug\SwipeBox.Presentation.dll
+C:\Users\SharePoint\Documents\GitHub\Swipe-Box\SwipeBox\SwipeBox.App\bin\Debug\SwipeBox.View.dll
+C:\Users\SharePoint\Documents\GitHub\Swipe-Box\SwipeBox\SwipeBox.App\bin\Debug\SwipeBox.Shared.dll
+C:\Users\SharePoint\Documents\GitHub\Swipe-Box\SwipeBox\SwipeBox.App\bin\Debug\SwipeBox.Presentation.pdb
+C:\Users\SharePoint\Documents\GitHub\Swipe-Box\SwipeBox\SwipeBox.App\bin\Debug\SwipeBox.View.pdb
+C:\Users\SharePoint\Documents\GitHub\Swipe-Box\SwipeBox\SwipeBox.App\bin\Debug\SwipeBox.Shared.pdb
+C:\Users\SharePoint\Documents\GitHub\Swipe-Box\SwipeBox\SwipeBox.App\obj\Debug\SwipeBox.App.csprojResolveAssemblyReference.cache
+C:\Users\SharePoint\Documents\GitHub\Swipe-Box\SwipeBox\SwipeBox.App\obj\Debug\App.g.cs
+C:\Users\SharePoint\Documents\GitHub\Swipe-Box\SwipeBox\SwipeBox.App\obj\Debug\SwipeBox.App_MarkupCompile.cache
+C:\Users\SharePoint\Documents\GitHub\Swipe-Box\SwipeBox\SwipeBox.App\obj\Debug\SwipeBox.App.exe
+C:\Users\SharePoint\Documents\GitHub\Swipe-Box\SwipeBox\SwipeBox.App\obj\Debug\SwipeBox.App.pdb

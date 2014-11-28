@@ -1,0 +1,5 @@
+C:\Users\SharePoint\Documents\GitHub\Swipe-Box\SwipeBox\SwipeBox.Shared\bin\Debug\SwipeBox.Shared.dll
+C:\Users\SharePoint\Documents\GitHub\Swipe-Box\SwipeBox\SwipeBox.Shared\bin\Debug\SwipeBox.Shared.pdb
+C:\Users\SharePoint\Documents\GitHub\Swipe-Box\SwipeBox\SwipeBox.Shared\obj\Debug\SwipeBox.Shared.csprojResolveAssemblyReference.cache
+C:\Users\SharePoint\Documents\GitHub\Swipe-Box\SwipeBox\SwipeBox.Shared\obj\Debug\SwipeBox.Shared.dll
+C:\Users\SharePoint\Documents\GitHub\Swipe-Box\SwipeBox\SwipeBox.Shared\obj\Debug\SwipeBox.Shared.pdb
