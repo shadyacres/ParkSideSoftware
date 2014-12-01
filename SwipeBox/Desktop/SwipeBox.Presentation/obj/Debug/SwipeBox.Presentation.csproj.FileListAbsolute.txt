@@ -1,7 +1,0 @@
-C:\Users\SharePoint\Documents\GitHub\Swipe-Box\SwipeBox\SwipeBox.Presentation\bin\Debug\SwipeBox.Presentation.dll
-C:\Users\SharePoint\Documents\GitHub\Swipe-Box\SwipeBox\SwipeBox.Presentation\bin\Debug\SwipeBox.Presentation.pdb
-C:\Users\SharePoint\Documents\GitHub\Swipe-Box\SwipeBox\SwipeBox.Presentation\bin\Debug\SwipeBox.Shared.dll
-C:\Users\SharePoint\Documents\GitHub\Swipe-Box\SwipeBox\SwipeBox.Presentation\bin\Debug\SwipeBox.Shared.pdb
-C:\Users\SharePoint\Documents\GitHub\Swipe-Box\SwipeBox\SwipeBox.Presentation\obj\Debug\SwipeBox.Presentation.dll
-C:\Users\SharePoint\Documents\GitHub\Swipe-Box\SwipeBox\SwipeBox.Presentation\obj\Debug\SwipeBox.Presentation.pdb
-C:\Users\SharePoint\Documents\GitHub\Swipe-Box\SwipeBox\SwipeBox.Presentation\obj\Debug\SwipeBox.Presentation.csprojResolveAssemblyReference.cache
