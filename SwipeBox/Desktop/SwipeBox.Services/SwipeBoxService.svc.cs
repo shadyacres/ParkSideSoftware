@@ -23,13 +23,20 @@ namespace SwipeBox.Services
 
         public bool AddMeeting(int clientId)
         {
-            var meeting = new Meeting
+            try
             {
-                ClientId = clientId
-            };
+                var meeting = new Meeting
+                {
+                    ClientId = clientId,
+                    MeetingDate = DateTime.Now
+                };
 
-            return m_meetingRepo.Save(meeting);
-
+                return m_meetingRepo.Save(meeting);
+            }
+            catch
+            {
+                return false;
+            }
 
         }
     }

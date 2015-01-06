@@ -241,6 +241,15 @@ namespace SwipeBox.UI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Today&apos;s Meetings.
+        /// </summary>
+        public static string TodaysMeetings {
+            get {
+                return ResourceManager.GetString("TodaysMeetings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Update.
         /// </summary>
         public static string Update {

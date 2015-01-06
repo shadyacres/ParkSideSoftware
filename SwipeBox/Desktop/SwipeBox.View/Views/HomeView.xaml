@@ -28,7 +28,59 @@
                            Content="{x:Static resx:Resources.Home}"
                            HorizontalContentAlignment="Center" />
                 </Border>
-                <Label Content="Home page stuff here" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                <StackPanel Grid.ColumnSpan="1">
+                <Label Content="{x:Static resx:Resources.TodaysMeetings}"
+                       Style="{StaticResource SubHeadingStyle}"
+                       Margin="0,5,0,5" />
+                <ListBox  Margin="5,0"
+                          AlternationCount="2"
+                          VerticalAlignment="Stretch"
+                          HorizontalAlignment="Stretch"
+                          ItemsSource="{Binding Path=Meetings}">
+
+                    <ListBox.ItemTemplate>
+                        <ItemContainerTemplate>
+                            <StackPanel>
+                                <Label Content="{Binding Path=Client.Name}" />
+                                <Label Content="{Binding Path=MeetingDate}" />
+                            </StackPanel>
+
+                        </ItemContainerTemplate>
+
+                    </ListBox.ItemTemplate>
+                    <ListBox.ItemContainerStyle>
+
+                        <Style>
+                            <Setter Property="ItemsControl.BorderThickness"
+                                    Value="0,0.5,0,0.5" />
+                            <Setter Property="ItemsControl.BorderBrush"
+                                    Value="DarkGray" />
+                            <Setter Property="ItemsControl.FontFamily"
+                                    Value="Raavi" />
+                            <Setter Property="ItemsControl.FontSize"
+                                    Value="14" />
+                            <Style.Triggers>
+                                <Trigger Property="ItemsControl.AlternationIndex"
+                                         Value="1">
+                                    <Setter Property="Grid.Background"
+                                            Value="{StaticResource ResourceKey=ListBoxAlternationBackground}" />
+                                </Trigger>
+                                <Trigger Property="ItemsControl.AlternationIndex"
+                                         Value="0">
+                                    <Setter Property="Grid.Background"
+                                            Value="{StaticResource ResourceKey=ListBoxBackground}" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                </ListBox>
+                </StackPanel>
+                </Grid>
             </StackPanel>
 
         </Grid>
