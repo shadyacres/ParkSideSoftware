@@ -14,9 +14,23 @@ namespace SwipeBox.Services
     public class SwipeBoxService : ISwipeBoxService
     {
 
+        private IMeetingRepository m_meetingRepo;
+
+        public SwipeBoxService()
+        {
+            m_meetingRepo = new EFMeetingRepository();
+        }
+
         public bool AddMeeting(int clientId)
         {
-            throw new NotImplementedException();
+            var meeting = new Meeting
+            {
+                ClientId = clientId
+            };
+
+            return m_meetingRepo.Save(meeting);
+
+
         }
     }
 }

@@ -1,4 +1,10 @@
-﻿using SwipeBox.View;
+﻿using Microsoft.Practices.Unity;
+using Ninject;
+using SwipeBox.BusinessLogic;
+using SwipeBox.DAL.Repositories;
+using SwipeBox.UI;
+using SwipeBox.UI.View;
+using System.Reflection;
 using System.Windows;
 
 namespace SwipeBox.App
@@ -8,13 +14,24 @@ namespace SwipeBox.App
     /// </summary>
     public partial class App : Application
     {
+        private IUnityContainer container;
+
         protected override void OnStartup(StartupEventArgs e)
         {
-            MainWindow window = new MainWindow();
-            window.Closing += ApplicationClosing;
-            window.Show();
-            DispatcherUnhandledException += App_DispatcherUnhandledException;
             base.OnStartup(e);
+            ConfigureContainer();
+            var mainWindow = container.Resolve<MainWindow>();
+            mainWindow.Closing += ApplicationClosing;
+            mainWindow.Show();
+            DispatcherUnhandledException += App_DispatcherUnhandledException;
+        }
+
+        private void ConfigureContainer()
+        {
+             container = new UnityContainer();
+            container.RegisterType<IClientsBL, ClientsBL>();
+            container.RegisterType<IClientRepository, EFClientRepository>();
+
         }
 
         void App_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)

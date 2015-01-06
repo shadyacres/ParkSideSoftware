@@ -42,11 +42,16 @@ namespace SwipeBox.Shared.Entities
         /// <summary>
         /// Client's company ID
         /// </summary>
-        public int CompanyId { get; set; }
+        public int? CompanyId { get; set; }
 
         /// <summary>
         /// List of meetings the client has attended
         /// </summary>
         public virtual ICollection<Meeting> Meetings { get; set; }
+
+        /// <summary>
+        /// Whether or not the client is currently active
+        /// </summary>
+        public bool Active { get; set; }
     }
 }

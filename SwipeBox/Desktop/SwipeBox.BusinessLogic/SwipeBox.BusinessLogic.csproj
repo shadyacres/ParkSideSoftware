@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{89DD8995-D7A3-480E-8013-6701138AAA55}</ProjectGuid>
+    <ProjectGuid>{073DA6B6-8B3B-430C-95AC-783AF39DEE66}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SwipeBox.Shared</RootNamespace>
-    <AssemblyName>SwipeBox.Shared</AssemblyName>
+    <RootNamespace>SwipeBox.BusinessLogic</RootNamespace>
+    <AssemblyName>SwipeBox.BusinessLogic</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,7 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,13 +39,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commanding\RelayCommand.cs" />
-    <Compile Include="Constants\GlobalConstants.cs" />
-    <Compile Include="Entities\Client.cs" />
-    <Compile Include="Entities\Company.cs" />
-    <Compile Include="Entities\Meeting.cs" />
-    <Compile Include="Interfaces\IAutoRefresher.cs" />
+    <Compile Include="ClientsBL\ClientsBL.cs" />
+    <Compile Include="ClientsBL\IClientsBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SwipeBox.DAL\SwipeBox.DAL.csproj">
+      <Project>{46bda1f3-d329-4e99-b22f-e6ad4385bb18}</Project>
+      <Name>SwipeBox.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SwipeBox.Shared\SwipeBox.Shared.csproj">
+      <Project>{89dd8995-d7a3-480e-8013-6701138aaa55}</Project>
+      <Name>SwipeBox.Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

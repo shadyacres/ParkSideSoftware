@@ -1,9 +1,9 @@
-﻿<UserControl x:Class="SwipeBox.View.ClientsView"
+﻿<UserControl x:Class="SwipeBox.UI.View.ClientsView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:resx="clr-namespace:SwipeBox.View.Properties">
+             xmlns:resx="clr-namespace:SwipeBox.UI.Properties">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -33,36 +33,42 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="0">
-                        <Label Content="{x:Static resx:Resources.AddAClient}"
+                    <StackPanel Grid.Column="1">
+                        <Label Content="{x:Static resx:Resources.Update}"
                                Style="{StaticResource SubHeadingStyle}"
                                Margin="0,5,0,5" />
+                        <StackPanel IsEnabled="{Binding Path=ClientSelected}">
                         <UniformGrid Columns="2"
                                      Margin="5">
-                            <Label Content="{x:Static resx:Resources.Name}"
+                            <Label 
+                                    Content="{x:Static resx:Resources.Name}"
                                    VerticalContentAlignment="Center" />
-                            <TextBox Text="{Binding Path=ClientName}" Width="160" />
+                            <TextBox x:Name="clientNameTextBox"
+                                     Text="{Binding Path=Name}" Width="200" />
                         </UniformGrid>
                         <UniformGrid Columns="2" 
                                      Margin="5">
                             <Label Content="{x:Static resx:Resources.ContactNumber}" VerticalContentAlignment="Center" />
-                            <TextBox Text="{Binding Path=ContactNumber}"
-                                     Width="160" />
+                            <TextBox Text="{Binding Path=PhoneNumber}"
+                                     Width="200" />
                         </UniformGrid>
                         <UniformGrid Columns="2"
                                      Margin="5">
                             <Label Content="{x:Static resx:Resources.Email}"
                                    VerticalContentAlignment="Center" />
                             <TextBox Text="{Binding Path=Email}"
-                                     Width="160" />
+                                     Width="200" />
                         </UniformGrid>
+                        </StackPanel>
                         <UniformGrid Columns="2" Margin="5">
-                            <Button Content="{x:Static resx:Resources.AddClient}"
+                            <Button Content="{x:Static resx:Resources.Update}"
                                     Style="{StaticResource ButtonStyle}"
-                                    Command="{Binding Path=AddClientCommand}" />
+                                    Command="{Binding Path=UpdateClientCommand}" />
+
                         </UniformGrid>
+                       
                     </StackPanel>
-                    <StackPanel Grid.Column="1">
+                    <StackPanel Grid.Column="0">
                         <Label Content="{x:Static resx:Resources.ExistingClients}"
                                Style="{StaticResource SubHeadingStyle}"
                                Margin="0,5,0,5" />
@@ -70,8 +76,8 @@
                                   AlternationCount="2" 
                                   VerticalAlignment="Stretch"
                                   HorizontalAlignment="Stretch"
-                                  ItemsSource="{Binding Path=Clients}">
-                            
+                                  ItemsSource="{Binding Path=Clients}"
+                                  SelectedItem="{Binding Path=SelectedClient}">                           
                                 
                             <ListBox.ItemTemplate>
                                 <ItemContainerTemplate>
@@ -110,6 +116,16 @@
                                 </Style>
                             </ListBox.ItemContainerStyle>
                         </ListBox>
+                        <UniformGrid>
+                            <Button Command="{Binding Path=AddClientCommand}"
+                                    Content="{x:Static resx:Resources.NewClient}"
+                                    Style="{StaticResource ResourceKey=ButtonStyle}"
+                                    Margin="5,2,2,2" />
+                            <Button Command="{Binding Path=DeleteClientCommand}"
+                                    Content="{x:Static resx:Resources.DeleteClient}"
+                                    Style="{StaticResource ResourceKey=ButtonStyle}"
+                                    Margin="2,2,5,2" />
+                        </UniformGrid>
                     </StackPanel>
                 </Grid>
             </StackPanel>

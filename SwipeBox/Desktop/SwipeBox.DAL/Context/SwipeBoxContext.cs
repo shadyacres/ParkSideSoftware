@@ -8,7 +8,7 @@ namespace SwipeBox.DAL.Context
         public SwipeBoxContext()
             : base ("SwipeBoxContext")
         {
-           
+            Configuration.LazyLoadingEnabled = false;
         }
 
         public DbSet<Client> Clients { get; set; }

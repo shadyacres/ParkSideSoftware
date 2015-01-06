@@ -9,6 +9,11 @@ namespace SwipeBox.DAL.Repositories
     {
         private ISwipeBoxContext m_context;
 
+        public EFClientRepository()
+        {
+            m_context = new SwipeBoxContext();
+        }
+
         public EFClientRepository(ISwipeBoxContext context)
         {
             m_context = context;

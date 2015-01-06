@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace SwipeBox.View
+namespace SwipeBox.UI.View
 {
     /// <summary>
     /// Interaction logic for ClientsView.xaml

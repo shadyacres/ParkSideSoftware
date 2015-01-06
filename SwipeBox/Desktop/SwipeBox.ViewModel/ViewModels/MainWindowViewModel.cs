@@ -1,5 +1,5 @@
 ﻿
-namespace SwipeBox.Presentation
+namespace SwipeBox.ViewModel
 {
     public class MainWindowViewModel : BaseViewModel
     {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace SwipeBox.Presentation
+namespace SwipeBox.UI.ViewModel
 {
     public abstract class BaseViewModel : INotifyPropertyChanged
     {

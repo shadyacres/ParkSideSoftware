@@ -1,5 +1,6 @@
-﻿using SwipeBox.Shared;
-namespace SwipeBox.Presentation
+﻿using SwipeBox.BusinessLogic;
+using SwipeBox.Shared;
+namespace SwipeBox.ViewModel
 {
     public class MenuViewModel : BaseViewModel
     {
@@ -26,7 +27,7 @@ namespace SwipeBox.Presentation
 
         private void NavigateToClients(object binding)
         {
-            m_parent.CurrentViewModel = new ClientsViewModel();
+            m_parent.CurrentViewModel = new ClientsViewModel(new ClientsBL());
         }
 
         public RelayCommand NavigateToSettingsCommand { get; private set; }

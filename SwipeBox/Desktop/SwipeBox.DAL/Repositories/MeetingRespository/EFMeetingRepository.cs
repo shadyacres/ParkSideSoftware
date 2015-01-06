@@ -12,9 +12,9 @@ namespace SwipeBox.DAL.Repositories
     {
         private ISwipeBoxContext m_context;
 
-        public EFMeetingRepository(ISwipeBoxContext context)
+        public EFMeetingRepository()
         {
-            m_context = context;
+            m_context = new SwipeBoxContext();
         }
 
         public IQueryable<Meeting> Get
@@ -36,13 +36,13 @@ namespace SwipeBox.DAL.Repositories
         {
             var retVal = true;
 
-            if (meetingToSave.ClientId == 0)
+            if (meetingToSave.MeetingId == 0)
             {
                 m_context.Meetings.Add(meetingToSave);
             }
             else
             {
-                var meetingEntry = m_context.Meetings.Find(meetingToSave.ClientId);
+                var meetingEntry = m_context.Meetings.Find(meetingToSave.MeetingId);
                 if (meetingEntry != null)
                 {
                     meetingEntry.MeetingDate = meetingToSave.MeetingDate;
