@@ -29,5 +29,24 @@ namespace SwipeBox.Services.TestHarness
                 MessageBox.Show("Added Successfully: " +retVal);
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var email = (emailText.Text);
+
+            try
+            {
+                using (var client = new SwipeBoxServiceReference.SwipeBoxServiceClient())
+                {
+                    var retVal = client.GetClientByEmail(email);
+
+                    MessageBox.Show("Found: " + retVal.Name);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

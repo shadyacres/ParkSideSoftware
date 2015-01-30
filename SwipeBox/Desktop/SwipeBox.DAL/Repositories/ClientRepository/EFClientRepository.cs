@@ -79,6 +79,11 @@ namespace SwipeBox.DAL.Repositories
             return retVal;
         }
 
+        public Client GetByEmail(string email)
+        {
+            return m_context.Clients.FirstOrDefault(c => c.Email == email && c.Active);
+        }
+
         public void Dispose()
         {
             m_context.Dispose();

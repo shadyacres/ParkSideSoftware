@@ -23,8 +23,9 @@
   </MetadataSources>
   <Metadata>
     <MetadataFile FileName="SwipeBoxService.xsd" MetadataType="Schema" ID="db551621-3933-4550-87e4-70bade70795b" SourceId="1" SourceUrl="http://localhost/SwipeBoxServices/SwipeBoxService.svc?xsd=xsd0" />
-    <MetadataFile FileName="SwipeBoxService1.xsd" MetadataType="Schema" ID="d22aa3d4-e040-4667-908f-2a3b503899c2" SourceId="1" SourceUrl="http://localhost/SwipeBoxServices/SwipeBoxService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SwipeBoxService2.xsd" MetadataType="Schema" ID="335a26a5-7043-46f4-8f5a-606d8a99270d" SourceId="1" SourceUrl="http://localhost/SwipeBoxServices/SwipeBoxService.svc?xsd=xsd2" />
     <MetadataFile FileName="SwipeBoxService.wsdl" MetadataType="Wsdl" ID="4bf497d8-2618-41c2-b28b-8bb44b80de0e" SourceId="1" SourceUrl="http://localhost/SwipeBoxServices/SwipeBoxService.svc?wsdl" />
+    <MetadataFile FileName="SwipeBoxService1.xsd" MetadataType="Schema" ID="d22aa3d4-e040-4667-908f-2a3b503899c2" SourceId="1" SourceUrl="http://localhost/SwipeBoxServices/SwipeBoxService.svc?xsd=xsd1" />
     <MetadataFile FileName="SwipeBoxService.disco" MetadataType="Disco" ID="18e1f212-2398-4cf1-a79d-fe5b26f302df" SourceId="1" SourceUrl="http://localhost/SwipeBoxServices/SwipeBoxService.svc?disco" />
   </Metadata>
   <Extensions>

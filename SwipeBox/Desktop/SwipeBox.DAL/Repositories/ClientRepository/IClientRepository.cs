@@ -4,5 +4,6 @@ namespace SwipeBox.DAL.Repositories
 {
     public interface IClientRepository : IRepository<Client>
     {
+        Client GetByEmail(string email);
     }
 }

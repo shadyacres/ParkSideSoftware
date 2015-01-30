@@ -64,11 +64,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Service References\SwipeBoxServiceReference\SwipeBox.Services.TestHarness.SwipeBoxServiceReference.ClientDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\SwipeBoxServiceReference\SwipeBoxService.wsdl" />
     <None Include="Service References\SwipeBoxServiceReference\SwipeBoxService.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\SwipeBoxServiceReference\SwipeBoxService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SwipeBoxServiceReference\SwipeBoxService2.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

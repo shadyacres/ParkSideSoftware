@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SwipeBox.Services.DTO;
+using SwipeBox.Shared.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -13,7 +15,9 @@ namespace SwipeBox.Services
     public interface ISwipeBoxService
     {
         [OperationContract]
-        bool AddMeeting(int clientId);   
-       
+        bool AddMeeting(int clientId);
+
+        [OperationContract]
+        ClientDTO GetClientByEmail(string email); 
     }
 }
