@@ -40,6 +40,11 @@ namespace SwipeBox.Shared.Entities
         [DataMember]
         public string PhoneNumber { get; set; }
 
+        [DataMember]
+        public string Password { get; set; }
+
+        public string Salt { get; set; }
+
         /// <summary>
         /// Company the client works for
         /// </summary>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SwipeBox.Services.TestHarness.SwipeBoxServiceReference;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -46,6 +47,39 @@ namespace SwipeBox.Services.TestHarness
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var email = emailPwBox.Text;
+            var pw = passwordBox.Text;
+
+            try
+            {
+                using (var client = new SwipeBoxServiceReference.SwipeBoxServiceClient())
+                {
+                    var retVal = client.AuthorizeUser(email, pw);
+                    MessageBox.Show("User authorized:" + retVal);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ClientDTO[] clients;
+            using (var client = new SwipeBoxServiceReference.SwipeBoxServiceClient())
+            {
+                clients = client.GetAllClients();    
+            }
+
+            for (int i = 0; i < clients.Length; i++)
+            {
+                MessageBox.Show(clients[i].Name);
             }
         }
     }

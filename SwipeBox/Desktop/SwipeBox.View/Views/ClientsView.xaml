@@ -59,6 +59,13 @@
                             <TextBox Text="{Binding Path=Email}"
                                      Width="200" />
                         </UniformGrid>
+                        <UniformGrid Columns="2"
+                                     Margin="5">
+                                <Label Content="{x:Static resx:Resources.Password}"
+                                   VerticalContentAlignment="Center" />
+                                <TextBox Text="{Binding Path=Password}"
+                                     Width="200" />
+                        </UniformGrid>
                         </StackPanel>
                         <UniformGrid Columns="2" Margin="5">
                             <Button Content="{x:Static resx:Resources.Update}"
