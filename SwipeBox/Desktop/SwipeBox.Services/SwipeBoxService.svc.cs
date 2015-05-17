@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
+using System.Text;
 
 namespace SwipeBox.Services
 {
@@ -83,7 +84,7 @@ namespace SwipeBox.Services
         /// Gets a list of all active clients
         /// </summary>
         /// <returns>list of clients</returns>
-        public List<ClientDTO>GetAllClients()
+        public string GetAllClients()
         {
             var clients = m_clientRepo.Get.Where(c => c.Active || c.Active == null);
             if (clients == null)
@@ -91,21 +92,19 @@ namespace SwipeBox.Services
                 throw new FaultException("No clients found");
             }
 
-            var clientsDTO = new List<ClientDTO>();
+            var sb = new StringBuilder();
 
             foreach (var client in clients)
             {
-                var clientDTO = new ClientDTO
-                {
-                    Name = client.Name,
-                    Email = client.Email,
-                    PhoneNumber = client.PhoneNumber
-                };
-
-                clientsDTO.Add(clientDTO);
+                var clientText = string.Format("Id={0};Name={1};Email={2};Phone={3};",
+                                               client.ClientId,
+                                               client.Name,
+                                               client.Email,
+                                               client.PhoneNumber);
+                sb.Append(clientText);
             }
 
-            return clientsDTO;
+            return sb.ToString();
         }
 
         /// <summary>

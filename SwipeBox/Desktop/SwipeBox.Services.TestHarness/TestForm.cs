@@ -71,16 +71,14 @@ namespace SwipeBox.Services.TestHarness
 
         private void button4_Click(object sender, EventArgs e)
         {
-            ClientDTO[] clients;
+            string clients = string.Empty;
             using (var client = new SwipeBoxServiceReference.SwipeBoxServiceClient())
             {
-                clients = client.GetAllClients();    
+                clients = client.GetAllClients();   
             }
 
-            for (int i = 0; i < clients.Length; i++)
-            {
-                MessageBox.Show(clients[i].Name);
-            }
+            MessageBox.Show(clients);
+            
         }
     }
 }
