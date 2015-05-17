@@ -1,0 +1,17 @@
+---------------------------------------------
+- Version History for Python SOAP client	-
+- Uses Major.Minor.Revision.Bug structure	-
+---------------------------------------------
+
+0.1.0.0
+File creation
+
+0.1.1.0
+Added file handling to open the customerID.txt file and add the contents to a list
+
+0.1.2.0
+Added SUDS code to process the WSDL SOAP file
+
+0.1.2.1
+Bug: The Python file cannot find the suds.client lib
+Fix: Unzipping the .EGG file creates the folder
