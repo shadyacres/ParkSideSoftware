@@ -1,0 +1,19 @@
+websites for python suds
+
+suds-jurko documentation
+https://bitbucket.org/jurko/suds
+
+python list data structure
+https://docs.python.org/2/tutorial/datastructures.html
+http://www.tutorialspoint.com/python/python_lists.htm
+
+suds documentation
+https://fedorahosted.org/suds/wiki/Documentation
+
+importerror: no module named
+https://www.google.co.uk/webhp?sourceid=chrome-instant&rlz=1C1CHXU_en-GBGB640&ion=1&espv=2&ie=UTF-8#q=importerror%20no%20module%20named
+http://stackoverflow.com/questions/338768/python-importerror-no-module-named
+
+install python egg file
+https://www.google.co.uk/webhp?sourceid=chrome-instant&rlz=1C1CHXU_en-GBGB640&ion=1&espv=2&ie=UTF-8#q=install+python+egg+file
+http://stackoverflow.com/questions/18558733/how-can-i-install-a-egg-python-package-on-windows-attempt-using-easy-install-n
