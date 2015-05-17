@@ -29,5 +29,10 @@ namespace SwipeBox.UI.View
         {
             this.firstNameTxtBox.Focus();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.firstNameTxtBox.Focus();
+        }
     }
 }

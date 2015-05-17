@@ -30,13 +30,14 @@ namespace SwipeBox.BusinessLogic
         }
 
 
-        public Client AddClient(string name, string email, string phoneNumber)
+        public Client AddClient(string name, string email, string phoneNumber, string password)
         {
             var newClient = new Client
             {
                 Name = name,
                 Email = email,
                 PhoneNumber = phoneNumber,
+                Password = password,
                 Active = true
             };
 
@@ -68,11 +69,12 @@ namespace SwipeBox.BusinessLogic
             m_repo.Save(selectedClient);
         }
 
-        public void UpdateClient(Client selectedClient, string name, string email, string phoneNumber)
+        public void UpdateClient(Client selectedClient, string name, string email, string phoneNumber, string password)
         {
             selectedClient.Name = name;
             selectedClient.PhoneNumber = phoneNumber;
             selectedClient.Email = email;
+            selectedClient.Password = password;
 
             UpdateClient(selectedClient);
         }

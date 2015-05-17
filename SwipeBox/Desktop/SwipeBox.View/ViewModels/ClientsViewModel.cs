@@ -23,10 +23,12 @@ namespace SwipeBox.UI.ViewModel
         private const string NamePropertyName = "Name";
         private const string PhoneNumberPropertyName = "PhoneNumber";
         private const string EmailPropertyName = "Email";
+        private const string PasswordPropertyName = "Password";
 
         private string m_name;
         private string m_email;
         private string m_phoneNumber;
+        private string m_password;
         private IClientsBL m_clientsBL;
         private Client m_selectedClient;
         private Timer m_refreshTimer;
@@ -106,6 +108,7 @@ namespace SwipeBox.UI.ViewModel
                         Name = value.Name;
                         PhoneNumber = value.PhoneNumber;
                         Email = value.Email;
+                        Password = value.Password;
                     }
 
                     m_selectedClient = value;
@@ -157,6 +160,20 @@ namespace SwipeBox.UI.ViewModel
             }
         }
 
+        public string Password
+        {
+            get
+            {
+                return m_password;
+            }
+
+            set
+            {
+                m_password = value;
+                OnNotifyPropertyChanged(PasswordPropertyName);
+            }
+        }
+
         private bool CanModifyClient
         {
             get
@@ -193,7 +210,7 @@ namespace SwipeBox.UI.ViewModel
 
         public void UpdateClient(object parameter)
         {
-            m_clientsBL.UpdateClient(SelectedClient, Name, Email, PhoneNumber);
+            m_clientsBL.UpdateClient(SelectedClient, Name, Email, PhoneNumber, Password);
         }
         #endregion
 

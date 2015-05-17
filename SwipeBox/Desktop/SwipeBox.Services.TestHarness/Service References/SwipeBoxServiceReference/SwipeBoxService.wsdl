@@ -4,6 +4,7 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost/SwipeBoxServices/SwipeBoxService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost/SwipeBoxServices/SwipeBoxService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/SwipeBoxServices/SwipeBoxService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SwipeBox.Services.DTO" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ISwipeBoxService_AddMeeting_InputMessage">
@@ -12,16 +13,35 @@
   <wsdl:message name="ISwipeBoxService_AddMeeting_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddMeetingResponse" />
   </wsdl:message>
+  <wsdl:message name="ISwipeBoxService_GetClientByEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientByEmail" />
+  </wsdl:message>
+  <wsdl:message name="ISwipeBoxService_GetClientByEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientByEmailResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISwipeBoxService">
     <wsdl:operation name="AddMeeting">
       <wsdl:input wsaw:Action="http://tempuri.org/ISwipeBoxService/AddMeeting" message="tns:ISwipeBoxService_AddMeeting_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISwipeBoxService/AddMeetingResponse" message="tns:ISwipeBoxService_AddMeeting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientByEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISwipeBoxService/GetClientByEmail" message="tns:ISwipeBoxService_GetClientByEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISwipeBoxService/GetClientByEmailResponse" message="tns:ISwipeBoxService_GetClientByEmail_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISwipeBoxService" type="tns:ISwipeBoxService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="AddMeeting">
       <soap:operation soapAction="http://tempuri.org/ISwipeBoxService/AddMeeting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientByEmail">
+      <soap:operation soapAction="http://tempuri.org/ISwipeBoxService/GetClientByEmail" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

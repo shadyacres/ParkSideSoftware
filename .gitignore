@@ -228,3 +228,13 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+*.svcinfo
+SwipeBox/Desktop/SwipeBox.Services.TestHarness/Service References/ServiceReference1/Reference.cs
+*.svcmap
+SwipeBox/Desktop/SwipeBox.Services.TestHarness/Service References/ServiceReference1/SwipeBoxService.disco
+*.xsd
+SwipeBox/Desktop/SwipeBox.Services.TestHarness/Service References/SwipeBoxServiceReference/SwipeBoxService.xsd
+*.xsd
+SwipeBox/Desktop/SwipeBox.Services.TestHarness/Service References/SwipeBoxServiceReference/SwipeBoxService2.xsd
+*.xsd
+SwipeBox/Desktop/SwipeBox.Services.TestHarness/Service References/SwipeBoxServiceReference/Reference.cs

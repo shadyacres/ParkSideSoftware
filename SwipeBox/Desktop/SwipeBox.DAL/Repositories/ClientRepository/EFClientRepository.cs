@@ -1,4 +1,5 @@
 ﻿using SwipeBox.DAL.Context;
+using SwipeBox.Shared;
 using SwipeBox.Shared.Entities;
 using System;
 using System.Linq;
@@ -76,6 +77,30 @@ namespace SwipeBox.DAL.Repositories
             }
 
             m_context.SaveChanges();
+            return retVal;
+        }
+
+        public Client GetByEmail(string email)
+        {
+            return m_context.Clients.FirstOrDefault(c => c.Email == email && c.Active);
+        }
+
+        public bool AuthorizeUser(string email, string pass)
+        {
+            var retVal = false;
+            var client = m_context.Clients.FirstOrDefault(c => c.Email == email);
+            if (client == null)
+            {
+                retVal = false;
+            }
+            else
+            {
+                if (client.Password == pass)
+                {
+                    retVal = true;
+                }
+            }
+
             return retVal;
         }
 

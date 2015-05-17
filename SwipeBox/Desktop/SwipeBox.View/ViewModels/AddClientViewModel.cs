@@ -14,10 +14,12 @@ namespace SwipeBox.UI.ViewModel
         private const string NamePropertyName = "Name";
         private const string PhoneNumberPropertyName = "PhoneNumber";
         private const string EmailPropertyName = "Email";
+        private const string PasswordPropertyName = "Password";
 
         private string m_name;
         private string m_email;
         private string m_phoneNumber;
+        private string m_password;
         private IClientsBL m_clientBl;
         private ClientsViewModel m_parent;
 
@@ -34,6 +36,7 @@ namespace SwipeBox.UI.ViewModel
             Name = string.Empty;
             Email = string.Empty;
             PhoneNumber = string.Empty;
+            Password = string.Empty;
         }
 
         public RelayCommand CancelCommand { get; private set; }
@@ -80,7 +83,7 @@ namespace SwipeBox.UI.ViewModel
             {
                 m_parent.ClearValues();
                 m_parent.Stop();
-                m_parent.SelectedClient = m_clientBl.AddClient(Name, Email, PhoneNumber);
+                m_parent.SelectedClient = m_clientBl.AddClient(Name, Email, PhoneNumber, Password);
                 m_parent.StartTimer();
                 Close(obj);
             }
@@ -127,6 +130,21 @@ namespace SwipeBox.UI.ViewModel
                 OnNotifyPropertyChanged(PhoneNumberPropertyName);
             }
         }
+
+        public string Password
+        {
+            get
+            {
+                return m_password;
+            }
+
+            set
+            {
+                m_password = value;
+                OnNotifyPropertyChanged(PasswordPropertyName);
+            }
+        }
+
 
     }
 }

@@ -9,7 +9,102 @@
 //------------------------------------------------------------------------------
 
 namespace SwipeBox.Services.TestHarness.SwipeBoxServiceReference {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ClientDTO", Namespace="http://schemas.datacontract.org/2004/07/SwipeBox.Services.DTO")]
+    [System.SerializableAttribute()]
+    public partial class ClientDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ClientIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PhoneNumberField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ClientID {
+            get {
+                return this.ClientIDField;
+            }
+            set {
+                if ((this.ClientIDField.Equals(value) != true)) {
+                    this.ClientIDField = value;
+                    this.RaisePropertyChanged("ClientID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PhoneNumber {
+            get {
+                return this.PhoneNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PhoneNumberField, value) != true)) {
+                    this.PhoneNumberField = value;
+                    this.RaisePropertyChanged("PhoneNumber");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SwipeBoxServiceReference.ISwipeBoxService")]
@@ -20,6 +115,12 @@ namespace SwipeBox.Services.TestHarness.SwipeBoxServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISwipeBoxService/AddMeeting", ReplyAction="http://tempuri.org/ISwipeBoxService/AddMeetingResponse")]
         System.Threading.Tasks.Task<bool> AddMeetingAsync(int clientId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISwipeBoxService/GetClientByEmail", ReplyAction="http://tempuri.org/ISwipeBoxService/GetClientByEmailResponse")]
+        SwipeBox.Services.TestHarness.SwipeBoxServiceReference.ClientDTO GetClientByEmail(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISwipeBoxService/GetClientByEmail", ReplyAction="http://tempuri.org/ISwipeBoxService/GetClientByEmailResponse")]
+        System.Threading.Tasks.Task<SwipeBox.Services.TestHarness.SwipeBoxServiceReference.ClientDTO> GetClientByEmailAsync(string email);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,6 +156,14 @@ namespace SwipeBox.Services.TestHarness.SwipeBoxServiceReference {
         
         public System.Threading.Tasks.Task<bool> AddMeetingAsync(int clientId) {
             return base.Channel.AddMeetingAsync(clientId);
+        }
+        
+        public SwipeBox.Services.TestHarness.SwipeBoxServiceReference.ClientDTO GetClientByEmail(string email) {
+            return base.Channel.GetClientByEmail(email);
+        }
+        
+        public System.Threading.Tasks.Task<SwipeBox.Services.TestHarness.SwipeBoxServiceReference.ClientDTO> GetClientByEmailAsync(string email) {
+            return base.Channel.GetClientByEmailAsync(email);
         }
     }
 }
