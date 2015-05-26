@@ -72,6 +72,7 @@ namespace SwipeBox.Services
 
             var clientDTO = new ClientDTO
             {
+                ClientID = client.ClientId,
                 Name = client.Name,
                 Email = client.Email,
                 PhoneNumber = client.PhoneNumber
@@ -84,15 +85,14 @@ namespace SwipeBox.Services
         /// Gets a list of all active clients
         /// </summary>
         /// <returns>list of clients</returns>
-        public string GetAllClients()
+        public List<ClientDTO> GetAllClients()
         {
             var clients = m_clientRepo.Get.Where(c => c.Active || c.Active == null);
             if (clients == null)
             {
                 throw new FaultException("No clients found");
             }
-
-            var sb = new StringBuilder();
+            var retVal = new List<ClientDTO>();
 
             foreach (var client in clients)
             {
@@ -101,10 +101,18 @@ namespace SwipeBox.Services
                                                client.Name,
                                                client.Email,
                                                client.PhoneNumber);
-                sb.Append(clientText);
+                var clientDto = new ClientDTO
+                {
+                    ClientID = client.ClientId,
+                    Name = client.Name,
+                    Email = client.Email,
+                    PhoneNumber = client.PhoneNumber
+                };
+
+                retVal.Add(clientDto);
             }
 
-            return sb.ToString();
+            return retVal;
         }
 
         /// <summary>

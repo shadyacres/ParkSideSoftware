@@ -37,7 +37,7 @@ namespace SwipeBox.Services
         /// </summary>
         /// <returns>the list of clients</returns>
         [OperationContract]
-        string GetAllClients();
+        List<ClientDTO> GetAllClients();
 
         /// <summary>
         /// Authorize a user

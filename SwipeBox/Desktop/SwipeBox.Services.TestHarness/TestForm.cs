@@ -74,7 +74,7 @@ namespace SwipeBox.Services.TestHarness
             string clients = string.Empty;
             using (var client = new SwipeBoxServiceReference.SwipeBoxServiceClient())
             {
-                clients = client.GetAllClients();   
+                //clients = client.GetAllClients();   
             }
 
             MessageBox.Show(clients);
