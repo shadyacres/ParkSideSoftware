@@ -12,6 +12,7 @@ using SwipeBox.BusinessLogic;
 using System;
 using SwipeBox.UI;
 using SwipeBox.UI.View;
+using System.Windows.Controls;
 
 namespace SwipeBox.UI.ViewModel
 {
@@ -210,7 +211,8 @@ namespace SwipeBox.UI.ViewModel
 
         public void UpdateClient(object parameter)
         {
-            m_clientsBL.UpdateClient(SelectedClient, Name, Email, PhoneNumber, Password);
+            var password = (parameter as PasswordBox).Password;
+            m_clientsBL.UpdateClient(SelectedClient, Name, Email, PhoneNumber, password);
         }
         #endregion
 

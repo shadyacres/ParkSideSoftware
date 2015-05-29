@@ -27,7 +27,7 @@ namespace SwipeBox.UI.View
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
-            this.firstNameTxtBox.Focus();
+            this.Close();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

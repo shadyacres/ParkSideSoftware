@@ -63,7 +63,7 @@
                                      Margin="5">
                                 <Label Content="{x:Static resx:Resources.Password}"
                                    VerticalContentAlignment="Center" />
-                                <TextBox Text="{Binding Path=Password}"
+                                <PasswordBox PasswordChar="*"
                                      Width="200" />
                         </UniformGrid>
                         </StackPanel>
