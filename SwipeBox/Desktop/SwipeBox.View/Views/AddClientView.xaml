@@ -1,7 +1,7 @@
 ﻿<Window x:Class="SwipeBox.UI.View.AddClientView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:resx="clr-namespace:SwipeBox.UI.Properties"
              WindowStyle="None"
              ResizeMode="NoResize"
@@ -57,10 +57,10 @@
                          Margin="5,2">
                 <Label Margin="5,0,0,0"
                        Content="{x:Static resx:Resources.Password}" />
-                <TextBox Margin="0,0,5,0"
-                         Text="{Binding Path=Password, UpdateSourceTrigger=PropertyChanged}"
-                         
-                         MaxLength="16" />
+                <Grid>
+                <PasswordBox x:Name="passwordBox" Margin="0,0,5,0"
+                         MaxLength="16" PasswordChar="*" />
+                </Grid>
             </UniformGrid>
             <UniformGrid Columns="2"
                          Margin="5,2">
@@ -70,7 +70,7 @@
                         Content="{x:Static resx:Resources.Save}"
                         Command="{Binding Path=SaveCommand}"
                         Style="{StaticResource ButtonStyle}"
-                        CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}"
+                        CommandParameter="{Binding ElementName=passwordBox}"
                         Click="saveButton_Click" />
                 <Button Margin="2,2,5,2"
                         MinHeight="35"

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace SwipeBox.UI.ViewModel
 {
@@ -81,11 +82,12 @@ namespace SwipeBox.UI.ViewModel
             }
             else
             {
+                var passWord = (obj as PasswordBox).Password;
                 m_parent.ClearValues();
                 m_parent.Stop();
                 m_parent.SelectedClient = m_clientBl.AddClient(Name, Email, PhoneNumber, Password);
                 m_parent.StartTimer();
-                Close(obj);
+                
             }
         }
 
