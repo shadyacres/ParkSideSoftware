@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <ImageButton
+        android:id="@+id/contactImage"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/contact_margin"
+        android:layout_margin="@dimen/activity_main_margin"
+        android:background="@drawable/ic_user"
+        android:contentDescription="Image of user"
+        android:src="@drawable/profile_pic_selector" />
+
+    <TextView
+        android:id="@+id/emailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/nameTextView"
+        android:layout_below="@+id/nameTextView"
+        android:layout_marginBottom="@dimen/contact_text_margin"
+        android:text="Email: "
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/contactImage"
+        android:layout_below="@+id/contactImage"
+        android:layout_marginBottom="@dimen/contact_text_margin"
+        android:text="Name: "
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/phoneNumberTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/emailTextView"
+        android:layout_below="@+id/emailTextView"
+        android:layout_marginBottom="@dimen/contact_text_margin"
+        android:text="Phone Number: "
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/nameTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/nameTextView"
+        android:layout_alignBottom="@+id/nameTextView"
+        android:layout_toRightOf="@+id/nameTextView"
+        android:layout_marginBottom="@dimen/contact_text_margin"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/emailTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/emailTextView"
+        android:layout_alignBottom="@+id/emailTextView"
+        android:layout_toRightOf="@+id/emailTextView"
+        android:layout_marginBottom="@dimen/contact_text_margin"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/phoneNumberTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/phoneNumberTextView"
+        android:layout_toRightOf="@+id/phoneNumberTextView"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</RelativeLayout>
