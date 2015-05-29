@@ -64,6 +64,11 @@
     <Content Include="javascript\slick\fonts\slick.eot" />
     <Content Include="javascript\slick\fonts\slick.ttf" />
     <Content Include="javascript\slick\fonts\slick.woff" />
+    <Content Include="android\SwipeBox.apk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Properties\PublishProfiles\Swipebox - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\Swipebox - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\swipebox.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -63,14 +63,16 @@
                                      Margin="5">
                                 <Label Content="{x:Static resx:Resources.Password}"
                                    VerticalContentAlignment="Center" />
-                                <PasswordBox PasswordChar="*"
+                                <PasswordBox x:Name="passwordBox" 
+                                    PasswordChar="*"
                                      Width="200" />
                         </UniformGrid>
                         </StackPanel>
                         <UniformGrid Columns="2" Margin="5">
                             <Button Content="{x:Static resx:Resources.Update}"
                                     Style="{StaticResource ButtonStyle}"
-                                    Command="{Binding Path=UpdateClientCommand}" />
+                                    Command="{Binding Path=UpdateClientCommand}"
+                                    CommandParameter="{Binding ElementName=passwordBox}" />
 
                         </UniformGrid>
                        
@@ -84,7 +86,7 @@
                                   VerticalAlignment="Stretch"
                                   HorizontalAlignment="Stretch"
                                   ItemsSource="{Binding Path=Clients}"
-                                  SelectedItem="{Binding Path=SelectedClient}">                           
+                                  SelectedItem="{Binding Path=SelectedClient}" SelectionChanged="ListBox_SelectionChanged">                           
                                 
                             <ListBox.ItemTemplate>
                                 <ItemContainerTemplate>

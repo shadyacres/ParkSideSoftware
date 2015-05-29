@@ -11,5 +11,10 @@ namespace SwipeBox.UI.View
         {
             InitializeComponent();
         }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            passwordBox.Clear();
+        }
     }
 }

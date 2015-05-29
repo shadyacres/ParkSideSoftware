@@ -85,7 +85,7 @@ namespace SwipeBox.UI.ViewModel
                 var passWord = (obj as PasswordBox).Password;
                 m_parent.ClearValues();
                 m_parent.Stop();
-                m_parent.SelectedClient = m_clientBl.AddClient(Name, Email, PhoneNumber, Password);
+                m_parent.SelectedClient = m_clientBl.AddClient(Name, Email, PhoneNumber, passWord);
                 m_parent.StartTimer();
                 
             }
