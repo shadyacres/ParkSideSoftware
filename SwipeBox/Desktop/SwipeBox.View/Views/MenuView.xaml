@@ -22,10 +22,10 @@
                     Margin="2"
                     Command="{Binding Path=NavigateToClientsCommand}"
                      Content="{x:Static resx:Resources.Clients}"/>
-            <Button Style="{StaticResource MenuButtonStyle}"
+            <!--<Button Style="{StaticResource MenuButtonStyle}"
                     Margin="2"
                     Command="{Binding Path=NavigateToSettingsCommand}"
-                    Content="{x:Static resx:Resources.Settings}" />
+                    Content="{x:Static resx:Resources.Settings}" />-->
         </StackPanel>
     </Border>
 </UserControl>
