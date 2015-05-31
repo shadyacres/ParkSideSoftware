@@ -1,15 +1,20 @@
-﻿using SwipeBox.BusinessLogic;
+﻿// <copyright file="AddClientViewModel.cs" company="Park Side Software">
+// Copyright (c) 29/04/2015 All Right Reserved
+// </copyright>
+// <author>Daniel Blackmore</author>
+// <date>29/04/2015</date>
+// <summary>Add Client View model</summary>
+
+using SwipeBox.BusinessLogic;
 using SwipeBox.Shared;
 using SwipeBox.UI.View;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Controls;
 
 namespace SwipeBox.UI.ViewModel
 {
+    /// <summary>
+    /// Add client view model
+    /// </summary>
     public class AddClientViewModel : BaseViewModel
     {
         private const string NamePropertyName = "Name";
@@ -24,6 +29,10 @@ namespace SwipeBox.UI.ViewModel
         private IClientsBL m_clientBl;
         private ClientsViewModel m_parent;
 
+        /// <summary>
+        /// Initialzies a new instance of the AddClientViewModel class
+        /// </summary>
+        /// <param name="parent">The parent window</param>
         public AddClientViewModel(ClientsViewModel parent)
         {
             m_parent = parent;
@@ -32,6 +41,9 @@ namespace SwipeBox.UI.ViewModel
             CancelCommand = new RelayCommand(Close);
         }
 
+        /// <summary>
+        /// Clear all Client values
+        /// </summary>
         public void ClearValues()
         {
             Name = string.Empty;
@@ -40,10 +52,18 @@ namespace SwipeBox.UI.ViewModel
             Password = string.Empty;
         }
 
+        /// <summary>
+        /// Gets the cancel command
+        /// </summary>
         public RelayCommand CancelCommand { get; private set; }
 
+        /// <summary>
+        /// Close action
+        /// </summary>
+        /// <param name="obj">binding param - The window</param>
         private void Close(object obj)
         {
+            // ensure correct type and close
             if (obj is AddClientView)
             {
                 var window = obj as AddClientView;
@@ -51,23 +71,35 @@ namespace SwipeBox.UI.ViewModel
             }
         }
 
+        /// <summary>
+        /// Gets the Save command
+        /// </summary>
         public RelayCommand SaveCommand { get; private set; }
 
+        /// <summary>
+        /// Gets a value indacting whether the user can save
+        /// </summary>
         public bool CanSave
         {
             get
             {
                 return !string.IsNullOrEmpty(Name) &&
                        !string.IsNullOrEmpty(Email) &&
-                       !string.IsNullOrEmpty(PhoneNumber);
+                       !string.IsNullOrEmpty(PhoneNumber) &&
+                       !string.IsNullOrEmpty(Password);
             }
         }
 
+        /// <summary>
+        /// Execute save action
+        /// </summary>
+        /// <param name="obj">binding parameter - the window</param>
         private void Save(object obj)
         {
             // Check if existing
             if (m_clientBl.ClientExists(Name, Email, PhoneNumber))
             {
+                // If client exists - warn user and clear
                 if (System.Windows.MessageBoxResult.Yes == System.Windows.MessageBox.Show(Properties.Resources.ClientExistsMessage,
                                                                                           Properties.Resources.ClientExistsCaption,
                                                                                           System.Windows.MessageBoxButton.YesNo,
@@ -82,6 +114,7 @@ namespace SwipeBox.UI.ViewModel
             }
             else
             {
+                // Set client parameters and add a client for it.
                 var passWord = (obj as PasswordBox).Password;
                 m_parent.ClearValues();
                 m_parent.Stop();
@@ -91,6 +124,9 @@ namespace SwipeBox.UI.ViewModel
             }
         }
 
+        /// <summary>
+        /// Gets or sets the client name
+        /// </summary>
         public string Name
         {
             get
@@ -105,6 +141,9 @@ namespace SwipeBox.UI.ViewModel
             }
         }
 
+        /// <summary>
+        /// Gets or sets the email value
+        /// </summary>
         public string Email
         {
             get
@@ -119,6 +158,9 @@ namespace SwipeBox.UI.ViewModel
             }
         }
 
+        /// <summary>
+        /// Gets or sets the phone number value
+        /// </summary>
         public string PhoneNumber
         {
             get
@@ -133,6 +175,9 @@ namespace SwipeBox.UI.ViewModel
             }
         }
 
+        /// <summary>
+        /// Gets or sets the password value
+        /// </summary>
         public string Password
         {
             get
@@ -146,8 +191,6 @@ namespace SwipeBox.UI.ViewModel
                 OnNotifyPropertyChanged(PasswordPropertyName);
             }
         }
-
-
     }
 }
 

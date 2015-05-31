@@ -19,6 +19,18 @@
   <wsdl:message name="ISwipeBoxService_GetClientByEmail_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetClientByEmailResponse" />
   </wsdl:message>
+  <wsdl:message name="ISwipeBoxService_GetAllClients_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllClients" />
+  </wsdl:message>
+  <wsdl:message name="ISwipeBoxService_GetAllClients_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllClientsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISwipeBoxService_AuthorizeUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthorizeUser" />
+  </wsdl:message>
+  <wsdl:message name="ISwipeBoxService_AuthorizeUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthorizeUserResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISwipeBoxService">
     <wsdl:operation name="AddMeeting">
       <wsdl:input wsaw:Action="http://tempuri.org/ISwipeBoxService/AddMeeting" message="tns:ISwipeBoxService_AddMeeting_InputMessage" />
@@ -27,6 +39,14 @@
     <wsdl:operation name="GetClientByEmail">
       <wsdl:input wsaw:Action="http://tempuri.org/ISwipeBoxService/GetClientByEmail" message="tns:ISwipeBoxService_GetClientByEmail_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISwipeBoxService/GetClientByEmailResponse" message="tns:ISwipeBoxService_GetClientByEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllClients">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISwipeBoxService/GetAllClients" message="tns:ISwipeBoxService_GetAllClients_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISwipeBoxService/GetAllClientsResponse" message="tns:ISwipeBoxService_GetAllClients_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthorizeUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISwipeBoxService/AuthorizeUser" message="tns:ISwipeBoxService_AuthorizeUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISwipeBoxService/AuthorizeUserResponse" message="tns:ISwipeBoxService_AuthorizeUser_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISwipeBoxService" type="tns:ISwipeBoxService">
@@ -42,6 +62,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetClientByEmail">
       <soap:operation soapAction="http://tempuri.org/ISwipeBoxService/GetClientByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllClients">
+      <soap:operation soapAction="http://tempuri.org/ISwipeBoxService/GetAllClients" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthorizeUser">
+      <soap:operation soapAction="http://tempuri.org/ISwipeBoxService/AuthorizeUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

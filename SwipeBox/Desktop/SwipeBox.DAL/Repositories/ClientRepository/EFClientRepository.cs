@@ -6,7 +6,6 @@
 // <summary>Client repo implemented in EF</summary>
 
 using SwipeBox.DAL.Context;
-using SwipeBox.Shared;
 using SwipeBox.Shared.Entities;
 using System;
 using System.Linq;
