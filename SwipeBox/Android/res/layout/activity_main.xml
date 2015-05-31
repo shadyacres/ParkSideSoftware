@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/activity_main_margin"
     tools:context="${relativePackage}.${activityClass}" >
 
     <EditText
@@ -12,10 +13,7 @@
         android:layout_centerVertical="true"
         android:ems="10"
         android:inputType="textPassword"
-        android:hint="Password" >
-
-        <requestFocus />
-    </EditText>
+        android:hint="@string/password_hint" />
 
     <EditText
         android:id="@+id/emailAddressEditText"
@@ -23,27 +21,34 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/passwordEditText"
         android:layout_alignLeft="@+id/passwordEditText"
+        android:layout_marginTop="@dimen/activity_main_margin"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:hint="Email Address" />
+        android:hint="@string/email_address_hint" >
+        
+        <requestFocus />
+    </EditText>
 
     <Button
         android:id="@+id/signInButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/passwordEditText"
+        android:layout_alignRight="@+id/passwordEditText"
         android:layout_below="@+id/passwordEditText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="47dp"
-        android:text="Sign in" />
+        android:layout_marginTop="@dimen/activity_main_margin"
+        android:text="@string/sign_in"
+        android:textColor="@color/abs__primary_text_holo_dark" />
 
-    <TextView
-        android:id="@+id/signInTextView"
+    <ImageView
+        android:id="@+id/swipeBoxImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/emailAddressEditText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="68dp"
-        android:text="Signing in page"
-        android:textSize="30sp" />
+        android:layout_alignLeft="@+id/emailAddressEditText"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/passwordEditText"
+        android:background="@drawable/ic_swipebox_logo2"
+        android:contentDescription="@string/swipebox_logo2_contdesc" />
 
 </RelativeLayout>

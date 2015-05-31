@@ -2,7 +2,7 @@ package com.example.swipebox;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
+import android.graphics.LightingColorFilter;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -14,10 +14,15 @@ import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 
+/**
+ * Main Activity which displays the login screen of the application.
+ * 
+ * @author James Meade
+ */
 public class MainActivity extends SherlockActivity
 {
 	private ActionBar actionBar;
-	private EditText password, emailAddress;
+	private EditText emailAddress, password;
 	private Button signIn;
 
 	@Override
@@ -27,9 +32,11 @@ public class MainActivity extends SherlockActivity
 		setContentView(R.layout.activity_main);
 		
 		SharedPreferences spChecker = getSharedPreferences("userdetails", 0);
-		
-		if(spChecker.contains("emailaddress") && spChecker.contains("password"))
+	
+		/* Checks if user details SharedPreferences exists. */
+		if(spChecker.contains("user"))
 		{
+			/* Start Contact Activity if true. */
 			startActivity(new Intent(this, ContactActivity.class));
 		    finish();
 		}
@@ -43,32 +50,24 @@ public class MainActivity extends SherlockActivity
 			
 			signIn = (Button) findViewById(R.id.signInButton);
 			
+			signIn.getBackground().setColorFilter(new LightingColorFilter(0xFF27668C, 0xFF27668C)); // Set background colour of button.
+			
 			signIn.setOnClickListener(new OnClickListener() 
-			{
-				
+			{		
 				@Override
 				public void onClick(View v) 
 				{
 					LoginTask loginTask = new LoginTask(MainActivity.this);
 					
-					String emailAddressText = emailAddress.getText().toString();
-					String passwordText = password.getText().toString();
+					String emailAddressText = emailAddress.getText().toString(); // Gets email address that the user has entered.
+					String passwordText = password.getText().toString(); // Gets the password that the user has entered.
 					
 					String[] stringArray = new String[2];
 					
 					stringArray[0] = emailAddressText;
 					stringArray[1] = passwordText;
 					
-					/*
-					 * Shared preferences to store users details; email address and password.
-					 */
-					SharedPreferences userDetails = getSharedPreferences("userdetails", MODE_PRIVATE);
-					Editor edit = userDetails.edit();
-					edit.putString("emailaddress", emailAddressText);
-					edit.putString("password", passwordText);
-					edit.commit();
-					
-					loginTask.execute(stringArray);
+					loginTask.execute(stringArray); // Starts login to web service Thread.
 				}
 			});
 		
@@ -78,7 +77,7 @@ public class MainActivity extends SherlockActivity
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) 
 	{
-		 getSupportMenuInflater().inflate(R.menu.main, menu);
+		getSupportMenuInflater().inflate(R.menu.main, menu);
 
 		return true;
 	}
@@ -88,14 +87,10 @@ public class MainActivity extends SherlockActivity
 	{
 		switch (item.getItemId())
 		{
-        case R.id.action_settings:
-        	/* Opens up the Settings activity */
-        	Intent settingsIntent = new Intent(this, SettingsActivity.class);
-        	startActivity(settingsIntent);
-        	return true;
-        case R.id.contact:
-        	Intent contactIntent = new Intent(this, ContactActivity.class);
-        	startActivity(contactIntent);
+        case R.id.about:
+        	/* Open About Activity. */
+        	Intent aboutIntent = new Intent(this, AboutActivity.class);
+        	startActivity(aboutIntent);
         	return true;
 			
 		default:
