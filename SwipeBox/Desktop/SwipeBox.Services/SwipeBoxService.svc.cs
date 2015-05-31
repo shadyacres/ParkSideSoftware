@@ -1,8 +1,9 @@
-﻿/*
- * Swipe box web service
- * Written by: Dan
- * Year: 2015
- * */
+﻿// <copyright file="SwipeBoxService.svc.cs" company="Park Side Software">
+// Copyright (c) 29/04/2015 All Right Reserved
+// </copyright>
+// <author>Daniel Blackmore</author>
+// <date>29/04/2015</date>
+// <summary>Swipe Box Service implementation</summary>
 
 using SwipeBox.DAL.Repositories;
 using SwipeBox.Services.DTO;
@@ -11,7 +12,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
-using System.Text;
 
 namespace SwipeBox.Services
 {

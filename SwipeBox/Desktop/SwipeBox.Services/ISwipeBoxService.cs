@@ -1,12 +1,13 @@
-﻿using SwipeBox.Services.DTO;
-using SwipeBox.Shared.Entities;
-using System;
+﻿// <copyright file="ISwipeBoxService.cs" company="Park Side Software">
+// Copyright (c) 29/04/2015 All Right Reserved
+// </copyright>
+// <author>Daniel Blackmore</author>
+// <date>29/04/2015</date>
+// <summary>Swipe box service contract</summary>
+
+using SwipeBox.Services.DTO;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
 
 namespace SwipeBox.Services
 {

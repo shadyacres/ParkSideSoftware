@@ -1,4 +1,11 @@
-﻿using System;
+﻿// <copyright file="Relaycommand.cs" company="Park Side Software">
+// Copyright (c) 29/04/2015 All Right Reserved
+// </copyright>
+// <author>Daniel Blackmore</author>
+// <date>29/04/2015</date>
+// <summary>Relay Commanding for UI commands</summary>
+
+using System;
 using System.Diagnostics;
 using System.Windows.Input;
 

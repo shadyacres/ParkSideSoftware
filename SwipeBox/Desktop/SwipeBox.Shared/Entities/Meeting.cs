@@ -1,37 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿// <copyright file="Meeting.cs" company="Park Side Software">
+// Copyright (c) 29/04/2015 All Right Reserved
+// </copyright>
+// <author>Daniel Blackmore</author>
+// <date>29/04/2015</date>
+// <summary>Meeting entity</summary>
+
+using System;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SwipeBox.Shared.Entities
 {
-    [DataContract]
+    /// <summary>
+    /// Meeting entity
+    /// </summary>
     public class Meeting
     {
         /// <summary>
         /// Meeting ID
         /// </summary>
-        [DataMember]
         public int MeetingId { get; set; }
 
         /// <summary>
         /// Time the meeting occured
         /// </summary>
-        [DataMember]
         public DateTime MeetingDate { get; set; }
 
         /// <summary>
         /// The Id of the client
         /// </summary>
-        [DataMember]
         public int ClientId { get; set; }
 
         /// <summary>
         /// The client attending the meeting
         /// </summary>
-        [DataMember]
         public virtual Client Client { get; set; }
     }
 }
